@@ -1,0 +1,159 @@
+{
+  "vetur.validation.script": false,
+  "vetur.validation.template": false,
+  "vetur.validation.style": false,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.vueIndentScriptAndStyle": false,
+  "editor.wordWrapColumn": 100,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "vue": "html"
+  },
+  "javascript.format.enable": false,
+  "stylelint.autoFixOnSave": true,
+  "stylelint.useLocal": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.options": {
+    "extensions": [".html", ".js", ".vue"]
+  },
+  "eslint.validate": ["html", "vue", "javascript"],
+  "cSpell.words": [
+    "Nuxt",
+    "Vuex",
+    "mixins",
+    "nuxtjs",
+    "stylelint",
+    "unregister",
+    "composables"
+  ],
+  "cSpell.ignorePaths": [
+    "**/package.json",
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/**",
+    ".vscode"
+  ],
+  "[html]": {
+    "editor.rulers": [100, 120],
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "blueprint.templatesPath": [".vscode/blueprint-templates"],
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src",
+    "~": "${workspaceRoot}/src"
+  },
+  "codemetrics.basics.ComplexityLevelNormal": 10,
+  "codemetrics.basics.ComplexityLevelHigh": 20,
+  "codemetrics.basics.ComplexityLevelExtreme": 30,
+  "scss.validate": false,
+  "html.format.endWithNewline": true,
+  "tailwindCSS.emmetCompletions": true,
+  "commit-message-editor.staticTemplate":[
+    "[type](jira): description",
+    "",
+    "原因：",
+    "",
+    "分析：",
+    "",
+    "執行："
+  ],
+  "commit-message-editor.tokens": [
+    {
+      "label": "Type",
+      "name": "type",
+      "type": "enum",
+      "options": [
+        {
+            "label": "[初始]",
+            "description": "專案初始化相關提交，無需說明，在專案啟動時共用提交訊息，可依序條列執行內容"
+        },
+        {
+            "label": "[功能]",
+            "description": "新增或修改需求相關提交，如內容較多請條列執行內容。"
+        },
+        {
+            "label": "[修復]",
+            "description": "修正問題相關提交，如問題較複雜可在原因補充條列詳細內容，請條列分析與執行內容。"
+        },
+        {
+            "label": "[重構]",
+            "description": "不影響功能的前提下，調整程式碼相關提交，請條列原因、分析與執行內容。"
+        },
+        {
+            "label": "[設定]",
+            "description": "新增或修改設定檔相關提交，如內容較多請條列執行內容。"
+        },
+        {
+            "label": "[文件]",
+            "description": "新增或修改說明與文件相關提交，如內容較多請條列執行內容。"
+        },
+        {
+            "label": "[測試]",
+            "description": "新增或修改測試內容相關提交，如內容較多請條列執行內容。"
+        },
+    ],
+      "description": "必填，請選擇提交訊息類型"
+    },
+    {
+      "label": "Jira Ticket Number",
+      "name": "scope",
+      "description": "選填，請填入 Jira 單號",
+      "type": "text",
+      "multiline": false,
+      "prefix": "(",
+      "suffix": ")"
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "description": "必填，請簡述說明",
+      "type": "text",
+      "multiline": false
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "description": "選填，依據三項分類 - '原因'、'分析'、'執行'，將內容條列於下方",
+      "type": "text",
+      "multiline": true,
+      "lines": 5,
+      "maxLines": 10
+    },
+    {
+      "label": "Breaking change (ignore this field)",
+      "name": "breaking_change",
+      "type": "boolean",
+      "value": "",
+      "default": false
+    },
+    {
+      "label": "Footer",
+      "name": "footer",
+      "description": "選填",
+      "type": "text",
+      "multiline": true
+    }
+  ],
+  "commit-message-editor.view.defaultView": "form"
+}

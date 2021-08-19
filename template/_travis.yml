@@ -1,0 +1,48 @@
+<%_ if (options.needTravisBuild) { _%>
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+- '12'
+cache:
+  yarn: true
+  directories:
+  - node_modules
+branches:
+  only:
+  # - testing
+  # - develop
+  # - staging
+  # - production
+env:
+  global:
+before_install:
+- export TZ='Asia/Taipei'
+- export PATH=$PATH:$HOME/.local/bin
+- curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscli.zip"
+- unzip awscli.zip
+- sudo ./aws/install
+- aws --version
+install:
+- npm i
+script:
+- ". ./.travis/setup.sh"
+- env NODE_ENV=$NODE_ENV npm run build
+before_deploy:
+- ". ./.travis/cleanBucket.sh"
+deploy:
+- provider: s3
+  local_dir: dist
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  bucket: "$static_bucket"
+  region: ap-northeast-1
+  skip_cleanup: true
+  on:
+    all_branches: true
+    condition: "$CAN_DEPLOY"
+after_deploy:
+- ". ./.travis/cleanCache.sh"
+notifications:
+  email: false
+<%_ } _%>

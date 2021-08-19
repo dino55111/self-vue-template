@@ -1,0 +1,64 @@
+{
+	// Place your workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"service": {
+		"scope": "javascript,vue",
+		"prefix": "service",
+		"body": [
+			"export const example = () => {",
+			"  return {",
+			"    request: {",
+			"      url: '/test',",
+			"      method: 'get'",
+			"    },",
+			"    success: (res) => {",
+			"      const example = res.data.example || {}",
+			"      return { data: example, error: null }",
+			"    },",
+			"    error: (err) => {",
+			"      const result = {",
+			"        data: {",
+			"          example: ''",
+			"        },",
+			"        error: {",
+			"          name: types.SERVER_ERROR",
+			"        }",
+			"      }",
+			"      if (err.status === 401) {",
+			"        result.error = { name: types.EXAMPLE_NOT_AUTH }",
+			"      } else if (err.status === 404) {",
+			"        result.error = { name: types.EXAMPLE_NOT_FOUND }",
+			"      }",
+			"      return result",
+			"    }",
+			"  }",
+			"}",
+			""
+		],
+		"description": "service example"
+	},
+	"api": {
+		"scope": "javascript,vue",
+		"prefix": "api",
+		"body": [
+			"const { error, data } = await this.$store.dispatch('giver/GET_BANNER')",
+			"if (error) return this.errorMap[error.name]()",
+			"// do something"
+		],
+		"description": "api example"
+	}
+}

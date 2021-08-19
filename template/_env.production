@@ -1,0 +1,2 @@
+BASE_URL=<%= options.baseUrl %>
+NODE_ENV=production
